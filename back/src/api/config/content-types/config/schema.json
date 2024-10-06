@@ -1,0 +1,85 @@
+{
+  "kind": "singleType",
+  "collectionName": "configs",
+  "info": {
+    "singularName": "config",
+    "pluralName": "configs",
+    "displayName": "config",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "site_name": {
+      "type": "string",
+      "required": true
+    },
+    "Navigation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.nav-menu"
+    },
+    "footerNavigation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.footer-links",
+      "max": 3
+    },
+    "Gdpr": {
+      "displayName": "GDPR",
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.gdpr"
+    },
+    "trust_logo": {
+      "displayName": "trust_logo",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.trust-logo"
+    },
+    "social_media": {
+      "displayName": "social",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.social"
+    },
+    "logo": {
+      "displayName": "Logo",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.logo"
+    },
+    "top_banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-section.top-banner"
+    },
+    "header_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.drop-down-menu"
+    },
+    "newsletter": {
+      "displayName": "newsletter",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.newsletter"
+    },
+    "top_header_blog": {
+      "displayName": "top_header_blog",
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.top-header-blog"
+    },
+    "copy_right": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

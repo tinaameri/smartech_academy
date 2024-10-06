@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_section_timeline_sections",
+  "info": {
+    "displayName": "TimelineSection",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "Item": {
+      "displayName": "TimelineItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.timeline-item"
+    },
+    "heading_title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

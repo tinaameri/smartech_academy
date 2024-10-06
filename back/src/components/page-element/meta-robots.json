@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_element_meta_robots",
+  "info": {
+    "displayName": "metaRobots"
+  },
+  "options": {},
+  "attributes": {
+    "index": {
+      "type": "boolean"
+    },
+    "follow": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_section_banners",
+  "info": {
+    "displayName": "Banner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

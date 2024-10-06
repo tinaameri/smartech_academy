@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_section_blog_sections",
+  "info": {
+    "displayName": "BlogSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.button"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "primary"
+      ]
+    }
+  }
+}

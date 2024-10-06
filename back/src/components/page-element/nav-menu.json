@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_element_nav_menus",
+  "info": {
+    "displayName": "nav_link",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "sub_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.nav-sub-menu"
+    }
+  }
+}

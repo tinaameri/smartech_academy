@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_page_element_simple_texts",
+  "info": {
+    "displayName": "simpleText",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "static_pages",
+  "info": {
+    "singularName": "static-page",
+    "pluralName": "static-pages",
+    "displayName": "static page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "page_dynamic_sections": {
+      "type": "dynamiczone",
+      "components": [
+        "page-section.2col-with-image",
+        "page-section.hero",
+        "page-section.info",
+        "page-section.image-carousel",
+        "page-section.tabs",
+        "page-section.simple-text",
+        "page-section.video",
+        "page-section.banner",
+        "page-section.testimonial",
+        "page-section.card-banner",
+        "page-section.create-campaign",
+        "page-section.contact-us",
+        "page-section.timeline-section",
+        "page-section.seller-carousel",
+        "page-section.top-banner",
+        "page-section.counter",
+        "page-section.vertical-card-list",
+        "page-section.blog-section",
+        "page-section.steps-tabs"
+
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

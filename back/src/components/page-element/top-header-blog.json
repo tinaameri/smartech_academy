@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_element_top_header_blogs",
+  "info": {
+    "displayName": "top_header_blog"
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "heading_description": {
+      "type": "text"
+    },
+    "input_placeholder": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    }
+  }
+}

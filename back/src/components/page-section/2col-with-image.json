@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_page_section_2col_with_images",
+  "info": {
+    "displayName": "cardSection",
+    "icon": "layout",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "heading_description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.button"
+    },
+    "reverse": {
+      "type": "boolean",
+      "default": false
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "blueRightBgBlueBlur",
+        "blueLeftBlur",
+        "blueRightBlur",
+        "blueRightBottomBlur",
+        "orangeLeftBlur"
+        
+        
+      ],
+      "default": "white"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.content"
+    },
+    "lottie_image_animation": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_page_section_testimonials",
+  "info": {
+    "displayName": "Testimonial",
+    "icon": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "slide": {
+      "displayName": "slide",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.slide"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "green",
+        "orange",
+        "greenPattern"
+      ]
+    },
+    "heading_description": {
+      "type": "text"
+    }
+  }
+}

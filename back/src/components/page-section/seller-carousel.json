@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_section_seller_carousels",
+  "info": {
+    "displayName": "sellerCarousel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "seller": {
+      "displayName": "seller",
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.seller"
+    },
+    "heading_title": {
+      "type": "string"
+    }
+  }
+}

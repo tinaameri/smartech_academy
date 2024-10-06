@@ -1,0 +1,33 @@
+.control {
+    background-color: var(--mantine-color-primary-1);
+    color: white;
+  }
+  
+  .control:hover {
+    background-color: var(--mantine-color-primary-1);
+    color: white;
+  }
+  
+  .item {
+    background-color: var(--mantine-color-primary-1);
+    border-bottom: 1px solid white;
+  }
+  
+  .label {
+    color: white !important;
+    font-weight: 700;
+  }
+  
+  .content {
+    color: white;
+    font-size: 14px;
+    padding-left: 40px;
+  }
+  
+  .panel {
+    color: white;
+  }
+  
+  .chevron {
+    color: white;
+  }

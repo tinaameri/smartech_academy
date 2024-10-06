@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_element_contents",
+  "info": {
+    "displayName": "content",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

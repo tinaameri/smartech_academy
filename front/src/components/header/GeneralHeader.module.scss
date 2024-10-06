@@ -1,0 +1,55 @@
+.item {
+    font-weight: 500;
+    font-size: var(--mantine-font-size-sm);
+    border-top: 1px solid var(--mantine-color-gray-3);
+    border-bottom: unset;
+  }
+  
+  .label {
+    font-weight: 500;
+    font-size: var(--mantine-font-size-sm);
+  }
+  
+  .content {
+    cursor: pointer;
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--mantine-font-size-sm);
+    height: 50px;
+    border-top: 1px solid var(--mantine-color-gray-3);
+  }
+  
+  @media (max-width: 600px) {
+    .link {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  
+
+  @media (min-width: 1220px) {
+    .hiddenMobile {
+      display: none;
+    }
+  }
+  
+  
+  @media (max-width: 1220px) {
+    .hiddenDesktop {
+      display: none;
+    }
+  }
+  
+  .image {
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  

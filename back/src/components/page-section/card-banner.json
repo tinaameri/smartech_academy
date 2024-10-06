@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_page_section_card_banners",
+  "info": {
+    "displayName": "CardBanner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading_title": {
+      "type": "string"
+    },
+    "heading_description": {
+      "type": "string"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "orange",
+        "green",
+        "white",
+        "orangePattern"
+      ]
+    }
+  }
+}

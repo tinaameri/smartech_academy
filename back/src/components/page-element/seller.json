@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_page_element_sellers",
+  "info": {
+    "displayName": "seller"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_uses",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "ContactUs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "heading_description": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.field-info"
+    },
+    "title": {
+      "type": "string"
+    },
+    "social_description": {
+      "type": "richtext"
+    },
+    "social_media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.social"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
+    },
+    "form_title": {
+      "type": "richtext"
+    },
+    "form_description": {
+      "type": "richtext"
+    },
+    "lottie_image_animation": {
+      "type": "boolean"
+    },
+    "show_contact_us_form": {
+      "type": "boolean",
+      "default": false
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

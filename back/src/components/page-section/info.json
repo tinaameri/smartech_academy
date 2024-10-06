@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_section_infos",
+  "info": {
+    "displayName": "info",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "pattern",
+        "white",
+        "gray"
+      ],
+      "default": "white"
+    }
+  }
+}

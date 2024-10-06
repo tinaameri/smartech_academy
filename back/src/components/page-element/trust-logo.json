@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_element_trust_logos",
+  "info": {
+    "displayName": "trust_logo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "html": {
+      "type": "richtext"
+    }
+  }
+}

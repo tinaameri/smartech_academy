@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_page_section_tabs",
+  "info": {
+    "displayName": "tabs",
+    "icon": "folder"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.tab"
+    }
+  }
+}

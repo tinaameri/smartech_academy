@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_element_options",
+  "info": {
+    "displayName": "option",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

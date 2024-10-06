@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_page_element_drop_down_menus",
+  "info": {
+    "displayName": "DropDownMenu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "dropDownItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.button"
+    },
+    "login_button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.login-button"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_section_counters",
+  "info": {
+    "displayName": "Counter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Counter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.counter"
+    },
+    "heading_title": {
+      "type": "string"
+    },
+    "heading_description": {
+      "type": "text"
+    }
+  }
+}

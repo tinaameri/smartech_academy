@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_element_field_infos",
+  "info": {
+    "displayName": "field_info",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

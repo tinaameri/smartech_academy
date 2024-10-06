@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_element_search_boxes",
+  "info": {
+    "displayName": "search_box",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "placeholder": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    }
+  }
+}

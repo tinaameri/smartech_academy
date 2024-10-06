@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_page_section_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "richtext",
+      "maxLength": 900
+    },
+    "action": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.button"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos",
+        "audios",
+        "files"
+      ]
+    },
+    "words_animation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.words-animation"
+    },
+    "lottie_image_animation": {
+      "type": "boolean",
+      "default": true
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

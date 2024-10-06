@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_element_newsletters",
+  "info": {
+    "displayName": "newsletter",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "email_placeholder": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

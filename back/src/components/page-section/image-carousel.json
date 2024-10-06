@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_page_section_image_carousels",
+  "info": {
+    "displayName": "imageCarousel",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heading_title": {
+      "type": "string"
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "darkCircle",
+        "blur"
+      ]
+    }
+  }
+}

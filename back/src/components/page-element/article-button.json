@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_element_article_buttons",
+  "info": {
+    "displayName": "article_button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.button"
+    },
+    "body": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

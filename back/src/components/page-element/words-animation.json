@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_page_element_words_animations",
+  "info": {
+    "displayName": "Words_animation"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
