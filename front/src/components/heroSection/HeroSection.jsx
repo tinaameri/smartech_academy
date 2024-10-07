@@ -1,47 +1,31 @@
 import { useState, useEffect, useContext } from 'react';
-import { Text, Box, Grid, Flex, Skeleton, Title } from '@mantine/core';
+import { Text, Box, Grid, Flex, Skeleton, Title, Button } from '@mantine/core';
 import Layout from '@/components/LayoutComponent';
 //import { useMediaQuery } from '@mantine/hooks';
 //import Image from 'next/image';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Markdown from '@/components/Markdown';
-import {ButtonComponent} from '@/components/Button';
 import { ModalWithReducer } from '@/context/ModalProvider';
 import classes from '@/components/heroSection/HeroSection.module.scss';
 import { IMAGES_BASE_URL } from '@/api/client';
 import Image from 'next/image';
+import CustomButton from '../customButton/CustomButton';
 // const DotLottiePlayer = dynamic(() => import('@dotlottie/react-player').then((module) => module.DotLottiePlayer));
 
 function HeroSection(props) {
   const {
-    topTitle,
+    
     title,
-    top_subtitle,
     subtitle,
     button,
     src,
-    // href,
-    topTitleColor,
-    bg,
-    // pyContent,
-    titleColor,
-    topSubtitleColor,
     subtitleColor,
     lottie,
     image,
     bgFluid
-    // beforeSymbol,
-    // afterSymbol,
-  } = props;
-  //   const xLargerScreen = useMediaQuery('(min-width: 88em)');
-  // const largerLgScreen = useMediaQuery('(min-width: 90.1em)');
-  //const largerMidScreen = useMediaQuery('(min-width: 64em)');
-  //const largerSmallScreen = useMediaQuery('(min-width: 37.5em)');
-  //const smallerXsScreen = useMediaQuery('(max-width: 22.5em)');
-  //const smallerLgScreen = useMediaQuery('(max-width: 75em)');
-  //const midScreen = useMediaQuery('(max-width: 64em) and (min-width: 37.5em)');
 
-  // eslint-disable-next-line no-unused-vars
+  } = props;
+ 
   const [showComponent, setShowComponent] = useState(true);
   useEffect(() => {
     const handleResize = () => {
@@ -91,6 +75,7 @@ function HeroSection(props) {
             )}
             {subtitle && (
               <Text
+              component={Box}
                 className={classes.subtitle}
                 w={{ lg: '90%', md: '90%', sm: '95.5%', xs: '98%' }}
                 c={subtitleColor}
@@ -101,11 +86,11 @@ function HeroSection(props) {
               </Text>
             )}
             {button && (
-            <Flex>
+            <Flex className={classes.buttons}>
             {button?.map((button, index) => (
               <Box key={index} m={'xs'}>
-                <ButtonComponent
-                  type={button?.type}
+                <CustomButton
+                  variant={button?.type}
                   href={button?.link}
                   title={button?.title}
                   newPage={button?.newPage}

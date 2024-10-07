@@ -5,6 +5,8 @@ import { ModalWithReducer } from '@/context/ModalProvider';
 // import GDPR from '@/components/modal/GDPR';
 // import { NextSeo } from 'next-seo';
 import { HeaderMegaMenu } from '@/components/header/HeaderMegaMenu';
+import { AppShell, Box, Flex } from '@mantine/core';
+import {GeneralFooter} from '@/components/footer/GeneralFooter';
 const initIntrack = () => {
   (function (i, n, t, r, a, c, k) {
     let o = (i['InTrack'] = i['InTrack'] || {});
@@ -109,31 +111,32 @@ function BaseLayout({
     <>
       {/* <NextSeo titleTemplate={' اسمارتک | %s'} />*/}
 
-        {/* <GeneralHeader
-          links={config?.Navigation}
-          logo={config?.logo}
-          button={config?.header_button}
-          translation={translation}
-          postLocalization={postLocalization}
-          posts={posts}
-          contactUsLocalization={contactUsLocalization}
-        />  */}
-{console.log('config:',config)}
-<HeaderMegaMenu
-  links={config?.Navigation}
-          logo={config?.logo}
-          button={config?.header_button}
-          translation={translation}
-          postLocalization={postLocalization}
-          posts={posts}
-          contactUsLocalization={contactUsLocalization}/>
+
+      <AppShell
+      
+  
+
+
+      >
+            <AppShell.Header>
+              <HeaderMegaMenu
+        links={config?.Navigation}
+                logo={config?.logo}
+                button={config?.header_button}
+                posts={posts}
+                />
+</AppShell.Header>
+      
+      <AppShell.Main>
+
       <main
         className={'main-box'}
       >
         {children}
-      </main>
-
-        {/* <Footer
+      </main> 
+      </AppShell.Main>
+      <AppShell.Section>
+      <GeneralFooter
           show={show}
           links={config?.footerNavigation || []}
           handleClose={handleClose}
@@ -143,7 +146,11 @@ function BaseLayout({
           social={config?.social_media}
           trust={config?.trust_logo || []}
         />
-      <SuccessModal />
+        </AppShell.Section>
+      </AppShell>
+
+
+            {/* <SuccessModal />
       { <GDPR content={gdpr} /> */}
     </>
   );

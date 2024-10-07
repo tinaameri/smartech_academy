@@ -27,14 +27,14 @@ export default function Layout({
       display={display}
       bg={bgFluid}
       fluid
-      p="0"
+      py="50px"
       h="100%"
       pos="relative"
       mt={mt}
       sx={{ zIndex: '3' }}
       className={fluidClassName}
     >
-      <Container bg={bgLayout} size={midScreen ? 'md' : 'xl'}
+      <Container bg={bgLayout} size={midScreen ? 'md' : 'lg'}
       >
       <Grid
       //grow

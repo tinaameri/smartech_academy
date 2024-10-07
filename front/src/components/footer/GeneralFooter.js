@@ -1,10 +1,10 @@
 import React from 'react';
 import { MediaQuery, Box } from '@mantine/core';
-import BottomFooter from '@/components/footer/BottomFooter';
-import TopFooter from '@/components/footer/TopFooter';
-import AccordionFooter from '@/components/footer/AccordionFooter';
+import {BottomFooter} from '@/components/footer/BottomFooter';
+import {TopFooter} from '@/components/footer/TopFooter';
+import {AccordionFooter} from '@/components/footer/AccordionFooter';
 
-export default function GeneralFooter({
+  function GeneralFooter({
   links,
   trust,
   logo,
@@ -12,20 +12,16 @@ export default function GeneralFooter({
   social,
 }) {
   return (
-    <Box>
       <footer>
-        <MediaQuery smallerThan="md" styles={{ display: 'none' }}>
-          <Box>
+        <Box visibleFrom="md" >
             <TopFooter links={links} trust={trust} logo={logo} />
           </Box>
-        </MediaQuery>
-        <MediaQuery largerThan="md" styles={{ display: 'none' }}>
-          <Box>
+      
+          <Box hiddenFrom='md'>
             <AccordionFooter links={links} trust={trust} logo={logo} />
           </Box>
-        </MediaQuery>
-        <BottomFooter copy_right={copy_right} social={social} />
+        <BottomFooter copy_right={copy_right} social={social} /> 
       </footer>
-    </Box>
   );
 }
+export {GeneralFooter}

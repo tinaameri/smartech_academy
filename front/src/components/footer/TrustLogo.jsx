@@ -2,7 +2,7 @@ import { Box, Flex, Center } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import React from 'react';
 
-export default function TrustLogo({ items }) {
+function TrustLogo({ items }) {
   const smallerSmallScreen = useMediaQuery('(max-width: 37.5em)');
   return (
     <Box>
@@ -28,3 +28,4 @@ export default function TrustLogo({ items }) {
     </Box>
   );
 }
+export {TrustLogo}

@@ -1,6 +1,6 @@
 
 import { DirectionProvider, MantineProvider } from '@mantine/core';
-import theme from '@/theme'
+import {theme} from '@/theme/theme'
 import ModalWithReducerProvider from '@/context/ModalProvider';
 import { ModalsProvider } from '@mantine/modals';
 

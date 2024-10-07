@@ -1,93 +1,43 @@
-.link {
+  
+  .link {
     display: flex;
     align-items: center;
     height: 100%;
-    padding-left: var(--mantine-spacing-sm);
-    padding-right: var(--mantine-spacing-sm);
+    padding-left: var(--mantine-spacing-md);
+    padding-right: var(--mantine-spacing-md);
     text-decoration: none;
-    color: var(--mantine-color-black);
-    font-weight: 700;
-    font-size: var(--mantine-font-size-md);
+    color: var(--mantine-color-third-0);
+    font-weight: 350;
+    font-size: var(--mantine-font-size-sm);
+    line-height: 30px;
     cursor: pointer;
-  }
   
-  .link:hover {
-    background-color: var(--mantine-color-gray-0);
-    height: 85px;
-  }
-  
-  @media (max-width: 600px) {
-    .link {
-      height: 42px;
-      display: flex;
-      align-items: center;
+    @media (max-width: $mantine-breakpoint-sm) {
+      height: 28px;
       width: 100%;
     }
-  }
   
-  .titleSimpleSubMenu {
-    font-size: 12px;
+    @mixin hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    }
   }
   
   .subLink {
-    padding: var(--mantine-spacing-xs) var(--mantine-spacing-xs);
-    border-radius: var(--mantine-radius-lg);
-    border: 1px solid rgba(188, 201, 226, 0.60);
-  }
-  
-  .subLink:hover {
-    background-color: var(--mantine-color-gray-0);
-  }
-  
-  .subLink:active {
-    /* Add your active styles here */
-  }
-  
-  .subLinkTitle {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .dropdownFooter {
-    background-color: var(--mantine-color-gray-0);
-    margin: calc(var(--mantine-spacing-md) * -1);
-    margin-top: var(--mantine-spacing-sm);
-    padding: var(--mantine-spacing-md) calc(var(--mantine-spacing-md) * 2);
-    padding-bottom: var(--mantine-spacing-xl);
-    border-top: 1px solid var(--mantine-color-gray-1);
-  }
-
-  
-  @media (max-width: 600px) {
-    .hiddenMobile {
-      display: none;
-    }
-  }
-  
- 
-  
-  @media (min-width: 600px) {
-    .hiddenDesktop {
-      display: none;
-    }
-  }
-  
-  .nav:hover .dropdown {
-    background: red;
-    display: block;
-  }
-  
-  .dropdown {
-    z-index: 300;
-    top: 103px;
-    left: 0px;
     width: 100%;
-    position: absolute;
-    background-color: white;
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+    border-radius: var(--mantine-radius-md);
+    color: var(--mantine-color-third-0);
+border:1px solid var(--mantine-color-gray-2);
+text-decoration: none;
+height: 70px;
+    @mixin hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
+    }
+ 
   }
-  
-  .rightList {
-    list-style-type: none;
+  .mobileSubLink{
+    width: 100%;
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+    border-bottom:1px solid var(--mantine-color-gray-2)
+     ;
   }
-  
