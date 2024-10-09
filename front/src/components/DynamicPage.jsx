@@ -16,7 +16,9 @@ import { getKeyByValue } from '@/utils/helpers';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-export default function DynamicPage({ pageData, config, seo, posts }) {
+import { CardCarousel } from './carousel/CardCarousel';
+import {BlogSection} from '@/components/blog/BlogSection';
+export default function DynamicPage({ pageData, config, seo, posts,categories }) {
   const data =
     pageData?.page_dynamic_sections || pageData?.page_dynamic_sections_blog;
   const heroImage = data
@@ -25,6 +27,7 @@ export default function DynamicPage({ pageData, config, seo, posts }) {
   const router = useRouter();
   return (
     <>
+    {console.log('posts',posts)}
       {/* {!router?.pathname.includes('/blog') && (
         <Head>
           <link
@@ -50,8 +53,7 @@ export default function DynamicPage({ pageData, config, seo, posts }) {
               // ) :
               section.__typename === 'ComponentPageSectionHero' ? (
                 <>
-                {console.log(section,'section')}
-                {console.log(IMAGES_BASE_URL + section?.media?.data?.attributes?.url,'section')}
+  
 
                   <HeroSection
                     //bg="primary"
@@ -70,9 +72,22 @@ export default function DynamicPage({ pageData, config, seo, posts }) {
                   
                   />
                 </>
-              ) : 
+              ) : (section.__typename === 'ComponentPageSectionBlogSection')?(
+                <>
+                 <BlogSection 
+                heading_title={section?.heading_title}
+                button={section?.button}
+                bgFluid={`url(${IMAGES_BASE_URL}${section?.background?.data?.attributes?.url})`}
+                posts={posts}
+                categories={categories}
+// currentCategory={currentCategory}
+                
+                />
+                </>
+                ):
               null
             }
+                   
           </React.Fragment>
         ))}
       </Container>

@@ -7,7 +7,7 @@ import { ModalsProvider } from '@mantine/modals';
 const AppProviders = ({ children }) => {
     return (
         <ModalWithReducerProvider>
-                <DirectionProvider>
+                <DirectionProvider initialDirection='rtl' detectDirection>
 
             <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
                 <ModalsProvider>

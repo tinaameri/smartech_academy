@@ -1,10 +1,13 @@
-import { createTheme } from '@mantine/core';
-import variantColorResolver from './button';
+import { createTheme,Button,Title } from '@mantine/core';
+import buttonClasses from '@/theme/button.module.scss'
+import headlinesClasses from '@/theme/headlines.module.scss'
 
 export const theme = createTheme({
   fontFamily: 'Yekan Bakh, sans-serif',
   //defaultRadius: '16px',
-  variantColorResolver,
+  media: {
+    mobile:`@media (min-width: 1024px)`
+  },
 
   radius: {
     xs: '12px',
@@ -82,21 +85,19 @@ export const theme = createTheme({
     ],
 
   },
-
+  components: {
+    Button: Button.extend({
+      classNames: buttonClasses,
+    }), 
+    Title: Title.extend({
+      classNames: headlinesClasses,
+    }),
+  
+    
+  }, 
   headings: {
     fontFamily: 'Yekan Bakh, sans-serif',
     fontWeight: 650,
-    sizes: {
-      h1: {
-        fontSize: '34px',
-        '@media (min-width: 768px)': { fontSize: '80px' },
-
-      },
-      h2: {
-        fontSize: '28px',
-        '@media (min-width: 768px)': { fontSize: '36px' },
-        '@media (min-width: 1024px)': { fontSize: '44px' },
-      },
-    },
+ 
   },
 });

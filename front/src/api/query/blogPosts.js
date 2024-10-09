@@ -6,13 +6,21 @@ import {
 } from '@/api/client';
 import { CONFIG_QUERY, SEO_QUERY } from './shared';
 
-const BLOG_CATEGORIES = gql`
+export const BLOG_CATEGORIES = gql`
   blogCategories {
     data {
       attributes {
         slug
         title
         description
+        icon {
+          data {
+            attributes {
+              url
+              caption
+            }
+          }
+        }
       }
     }
   }

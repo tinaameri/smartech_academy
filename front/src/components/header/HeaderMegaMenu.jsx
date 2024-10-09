@@ -48,7 +48,7 @@ function HeaderMegaMenu({ logo, links }) {
 
                         </Group>
 
-                        <Box visibleFrom="md" maw={400} mx="auto">
+                        <Box visibleFrom="md" maw={400} mr="auto">
                           <Search/>
                             
                         </Box>

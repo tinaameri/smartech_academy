@@ -1,4 +1,4 @@
-import { BLOG_POSTS_SECTION } from './blogPosts';
+import { BLOG_POSTS_SECTION,BLOG_CATEGORIES } from './blogPosts';
 import { CONFIG_QUERY, SEO_QUERY } from './shared';
 import { strapiClient, gql } from '@/api/client';
 export async function getPagesSlugs() {
@@ -98,6 +98,7 @@ export async function getSinglePage(slug) {
   const SINGLE_PAGE = gql`
     query GET_PAGE{
       ${CONFIG_QUERY}
+      ${BLOG_CATEGORIES}
       ${BLOG_POSTS_SECTION}
       staticPages(filters:{slug:{
         eq:"${slug}"
@@ -231,7 +232,14 @@ export async function getSinglePage(slug) {
                   newPage
                   type
                 }
-                background
+                background{
+                  data{
+                    attributes{
+                      url
+                      caption
+                    }
+                  }
+                }
               }
               ...on ComponentPageSectionVerticalCardList{
                 id
@@ -464,7 +472,8 @@ lottie_image_animation
       ? response?.staticPages?.data[0]?.attributes
       : null,
     config: response?.config?.data?.attributes || {},
-    posts: response?.blogPosts?.data || {},
+    posts: response?.blogPosts.data || {},
+    categories: response?.blogCategories?.data || [],
     seo: response?.staticPages?.data?.length
       ? response?.staticPages?.data[0]?.attributes?.seo
       : null,
