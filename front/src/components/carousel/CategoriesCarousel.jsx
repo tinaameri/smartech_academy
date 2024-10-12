@@ -9,7 +9,7 @@ import { CategoryItem } from '../blog/categories/CategoryItem';
 import { IMAGES_BASE_URL } from '@/api/client';
 import classes from '@/components/carousel/CategoriesCarousel'
 import { useMediaQuery } from '@mantine/hooks';
-function CtegoriesCarousel({ categories, currentCategory }) {
+function CtegoriesCarousel({ categories, currentCategory,onCategorySelect,selectedCategory }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [embla, setEmbla] = useState(null);
   const uniqueCategories = new Set();
@@ -53,7 +53,7 @@ function CtegoriesCarousel({ categories, currentCategory }) {
           if (!uniqueCategories.has(category?.attributes?.slug)) {
             uniqueCategories.add(category?.attributes?.slug);
             return (
-              <Carousel.Slide key={category?.attributes?.slug} >
+              <Carousel.Slide key={category?.attributes?.slug} ta="center">
 
                 <CategoryItem
                   title={category?.attributes?.title}
@@ -61,7 +61,9 @@ function CtegoriesCarousel({ categories, currentCategory }) {
                   currentCategory={currentCategory}
                   categorySlug={category?.attributes?.slug}
 icon={category?.attributes?.icon?.data?.attributes?.url}
-
+onCategorySelect={onCategorySelect}
+selectedCategory={selectedCategory}
+isSelected={selectedCategory === category?.attributes?.slug}
                 />
 
               </Carousel.Slide>

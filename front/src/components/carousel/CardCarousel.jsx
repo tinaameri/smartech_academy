@@ -45,14 +45,6 @@ function CardCarousel({ posts }) {
                   plugins={[autoplay.current]}
                   onMouseEnter={autoplay.current.stop}
                   onMouseLeave={autoplay.current.reset}
-                //   styles={{
-                //     controls: {
-                //       width:'110%',
-                //       right:'-5%'
-                      
-                //     },
-                //   }}                  //align="start"
-
                 >
                     {posts?.map((post) => (
                         <Carousel.Slide key={post?.attributes?.slug} px="xs">

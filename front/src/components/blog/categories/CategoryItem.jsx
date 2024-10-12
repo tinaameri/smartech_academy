@@ -5,20 +5,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-function CategoryItem({href,title,categorySlug,icon}) {
-    const {hovered,ref}=useHover()
-
-  return (
-    <UnstyledButton ref={ref}  component={Link} href={href}
-    passHref>
-    <Flex direction={"column"} align={"center"} justify={"center"}>
-     {icon ? <Image  src={ IMAGES_BASE_URL + icon} style={{
-        filter:hovered ?  'none' : 'grayscale(100%)'
-      }} height={30} width={30} alt={title} /> : null} 
-      <Text component='strong' ta="center" mt="md" fz={'xs'} c={hovered ? 'gray.7' :'third.0'} >
-{title}
-      </Text>
-    </Flex>
-  </UnstyledButton>  )
+function CategoryItem({ href, title, categorySlug, icon, onCategorySelect,selectedCategory,isSelected }) {
+    const { hovered, ref } = useHover()
+    { console.log(selectedCategory) }
+    return (
+        <UnstyledButton
+            onClick={() => onCategorySelect(categorySlug)}
+            ref={ref}
+            //  component={Link}
+            //  href={href}
+            passHref>
+            <Flex direction={"column"} align={"center"} justify={"center"}>
+                {icon ? <Image src={IMAGES_BASE_URL + icon} style={{
+                    filter: hovered || isSelected ? 'none' : 'grayscale(100%)'
+                }} height={30} width={30} alt={title} /> : null}
+                <Text component='strong' ta="center" mt="md" fz={'xs'} c={hovered || isSelected  ? 'gray.7' : 'third.0'} >
+                    {title}
+                </Text>
+            </Flex>
+        </UnstyledButton>)
 }
-export {CategoryItem}
+export { CategoryItem }
