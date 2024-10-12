@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_page_section_vertical_cards",
+  "info": {
+    "displayName": "VerticalCards",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "text"
+    },
+    "heading_description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "VerticalCardItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-element.vertical-card-item"
+    },
+    "desktopBackground": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "mobileBackground": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -6,7 +6,6 @@ import {BaseLayout} from '@/components/BaseLayout'
 export default function App({ Component, pageProps }) {
   return (
     <>
-    {console.log(pageProps,'pageProps')}
     <AppProviders>
       <BaseLayout  config={pageProps?.config} slug={pageProps?.pageData?.slug}>
       <Component {...pageProps} />

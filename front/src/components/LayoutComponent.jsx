@@ -27,8 +27,8 @@ export default function Layout({
       display={display}
       bg={bgFluid}
       fluid
-      py="50px"
       h="100%"
+py="100px"
       pos="relative"
       mt={mt}
       sx={{ zIndex: '3' }}

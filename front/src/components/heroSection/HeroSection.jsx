@@ -9,7 +9,7 @@ import { ModalWithReducer } from '@/context/ModalProvider';
 import classes from '@/components/heroSection/HeroSection.module.scss';
 import { IMAGES_BASE_URL } from '@/api/client';
 import Image from 'next/image';
-import CustomButton from '../customButton/CustomButton';
+import {CustomButton} from '../customButton/CustomButton';
 // const DotLottiePlayer = dynamic(() => import('@dotlottie/react-player').then((module) => module.DotLottiePlayer));
 
 function HeroSection(props) {

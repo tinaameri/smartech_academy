@@ -15,11 +15,14 @@
       "component": "page-element.button"
     },
     "background": {
-      "type": "enumeration",
-      "enum": [
-        "white",
-        "primary"
-      ]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

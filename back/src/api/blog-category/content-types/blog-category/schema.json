@@ -29,6 +29,16 @@
       "relation": "manyToMany",
       "target": "api::blog-post.blog-post",
       "inversedBy": "categories"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

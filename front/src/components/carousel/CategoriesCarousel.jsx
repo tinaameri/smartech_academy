@@ -1,6 +1,6 @@
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import { Grid } from '@mantine/core';
+import { em, Grid } from '@mantine/core';
 import { content } from '/public/assets/contentJson';
 import { Progress } from '@mantine/core';
 
@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { CategoryItem } from '../blog/categories/CategoryItem';
 import { IMAGES_BASE_URL } from '@/api/client';
 import classes from '@/components/carousel/CategoriesCarousel'
+import { useMediaQuery } from '@mantine/hooks';
 function CtegoriesCarousel({ categories, currentCategory }) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [embla, setEmbla] = useState(null);
@@ -26,14 +27,15 @@ function CtegoriesCarousel({ categories, currentCategory }) {
     }
   }, [embla, handleScroll]);
   const allPosts = content.blog.categories;
+  const isMobile = useMediaQuery(`(max-width: ${em(1200)})`);
 
   return (
 <>
     <Carousel
       w="100%"
       //dragFree
-      slideSize={{ xs: '16%', sm: '13%', md: '47%', lg: '11%' }}
-      //slideGap={{ base: "md", sm: 'md' }}
+      slideSize={{base:'25%', xs: '16%', sm: '13%', md: '12%', lg: '12.8%' }}
+      //slideGap={{ base: "0", sm: 'md' }}
       mih={70}
       getEmblaApi={setEmbla}
       // initialSlide={5}    
@@ -51,7 +53,7 @@ function CtegoriesCarousel({ categories, currentCategory }) {
           if (!uniqueCategories.has(category?.attributes?.slug)) {
             uniqueCategories.add(category?.attributes?.slug);
             return (
-              <Carousel.Slide key={category?.attributes?.slug} mx="10px">
+              <Carousel.Slide key={category?.attributes?.slug} >
 
                 <CategoryItem
                   title={category?.attributes?.title}
@@ -68,13 +70,17 @@ icon={category?.attributes?.icon?.data?.attributes?.url}
           return null;
         })}
     </Carousel>
-     <Progress
+    {isMobile &&  <Progress
+     w="100%"
+     bg="gray.1"
+     color="gray.3"
      value={scrollProgress}
      maw={320}
      size="sm"
      mt="xl"
      mx="auto"
-   />
+   />}
+   
 </>
   );
 }

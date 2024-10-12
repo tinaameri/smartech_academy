@@ -25,7 +25,8 @@ function TopFooter({ links, trust, logo }) {
           <Grid.Col span={{ md: 5, lg: 4, xl: 4 }} px="sm">
             <Grid>
               {links.map((item, idx) => (
-                <Grid.Col key={idx} md={6} lg={3} xl={3}>
+                <Grid.Col key={idx}           span={{ md: 6, lg: 3, xl: 3 }}>
+
                   <Text component="span" c="white" fz="md" fw={550}>
                     {item.title}
                   </Text>
@@ -66,10 +67,8 @@ function TopFooter({ links, trust, logo }) {
           <Box w="100%" visibleFrom='lg'>
             <Grid.Col
               style={{ minHeight: '50px' }}
-              md={5}
-              lg={5}
-              xl={1}
-              orderMd={2}
+              span={{ md: 5, lg: 5, xl: 1 }}
+              order={{ base: 2 }}
             >
               <TrustLogo items={trust} />
             </Grid.Col>

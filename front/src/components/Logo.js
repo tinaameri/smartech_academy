@@ -24,6 +24,7 @@ function Logo({ position, logo, href, target }) {
 
           {image ? (
             <Image
+            priority
               src={
                 position === 'footer'
                   ? `${IMAGES_BASE_URL}${logo?.footer?.data?.attributes?.url}`

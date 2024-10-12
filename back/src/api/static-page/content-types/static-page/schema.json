@@ -35,10 +35,8 @@
         "page-section.seller-carousel",
         "page-section.top-banner",
         "page-section.counter",
-        "page-section.vertical-card-list",
         "page-section.blog-section",
-        "page-section.steps-tabs"
-
+        "page-section.vertical-cards"
       ]
     },
     "slug": {

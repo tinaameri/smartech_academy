@@ -2,9 +2,10 @@ import { Carousel } from '@mantine/carousel';
 import Layout from '../LayoutComponent';
 import '@mantine/carousel/styles.css';
 import { em, Grid } from '@mantine/core';
-import BlogCard from '../blog/BlogCard';
+import {BlogCard} from '../blog/BlogCard';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
+import { Progress } from '@mantine/core';
 
 import { useCallback, useEffect, useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
@@ -29,7 +30,7 @@ function CardCarousel({ posts }) {
     const autoplay = useRef(Autoplay({ delay: 2000 }));
 
     return (
-
+<>
                 <Carousel
                 w="100%"
                   //dragFree
@@ -67,6 +68,17 @@ function CardCarousel({ posts }) {
                         </Carousel.Slide>
                     ))}
                 </Carousel>
+                {isMobile &&  <Progress
+     w="100%"
+     bg="gray.1"
+     color="gray.3"
+     value={scrollProgress}
+     maw={320}
+     size="sm"
+     mt="xl"
+     mx="auto"
+   />}
+                 </>
 
     );
 }

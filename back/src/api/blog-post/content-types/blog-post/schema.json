@@ -41,7 +41,9 @@
         "page-section.article",
         "page-section.accordion",
         "page-section.video",
-        "page-section.button"
+        "page-section.button",
+        "page-section.two-col-with-image"
+
       ]
     }
   }

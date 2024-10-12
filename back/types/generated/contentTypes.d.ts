@@ -726,6 +726,7 @@ export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
       'manyToMany',
       'api::blog-post.blog-post'
     >;
+    icon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -768,7 +769,8 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
         'page-section.article',
         'page-section.accordion',
         'page-section.video',
-        'page-section.button'
+        'page-section.button',
+        'page-section.two-col-with-image'
       ]
     >;
     createdAt: Attribute.DateTime;
@@ -914,9 +916,8 @@ export interface ApiStaticPageStaticPage extends Schema.CollectionType {
         'page-section.seller-carousel',
         'page-section.top-banner',
         'page-section.counter',
-        'page-section.vertical-card-list',
         'page-section.blog-section',
-        'page-section.steps-tabs'
+        'page-section.vertical-cards'
       ]
     >;
     slug: Attribute.UID<'api::static-page.static-page', 'title'> &

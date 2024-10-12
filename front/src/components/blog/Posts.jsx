@@ -1,13 +1,13 @@
-import BlogCard from '@/components/blog/BlogCard';
+import {BlogCard} from '@/components/blog/BlogCard';
 import Layout from '@/components/LayoutComponent';
 import { Grid, Box, Text } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import PostPagination from '@/components/blog/PostPagination';
+import PostPagination from '@/components/blog/PostPagination/PostPagination';
 import { useRouter } from 'next/router';
 import Search from '@/components/blog/Search';
-import Categories from '@/components/carousel/CategoriesCarousel';
+import {Categories} from '@/components/carousel/CategoriesCarousel';
 
-export default function Posts({
+function Posts({
   posts,
   categories,
   totalPages,
@@ -30,25 +30,25 @@ export default function Posts({
   // }, [loadingLoader]);
   return (
     <>
-      {router.pathname !== '/blog' && <Search mt="160px" />}
+      {/* {router.pathname !== '/blog' && <Search mt="160px" />} */}
       <Layout pb="40px">
         {router.pathname !== '/blog/search' && (
-          <Grid.Col xs={12}>
-            <Categories
+          <Grid.Col span={12}>
+            {/* <Categories
               categories={categories}
               currentCategory={currentCategory}
-            />
+            /> */}
           </Grid.Col>
         )}
         {type === 'home' ? (
           smallerMidScreen ? (
             posts?.map((post) => (
               <Grid.Col
-                xs={12}
-                sm={10}
-                md={6}
-                lg={4}
-                xl={4}
+                // xs={12}
+                // sm={10}
+                // md={6}
+                // lg={4}
+                // xl={4}
                 m="auto"
                 // display={largerLgScreen && 'none'}
                 key={post.slug}
@@ -59,7 +59,7 @@ export default function Posts({
                     slug={post?.attributes?.title}
                     date={post?.attributes?.publishedAt}
                     img={post?.attributes?.featuredImage?.data?.attributes?.url}
-                    categories={post?.attributes?.categories?.data || []}
+                    //categories={post?.attributes?.categories?.data || []}
                   />
                 </Box>
               </Grid.Col>
@@ -67,11 +67,11 @@ export default function Posts({
           ) : (
             posts?.slice(4)?.map((post) => (
               <Grid.Col
-                xs={12}
-                sm={10}
-                md={6}
-                lg={4}
-                xl={4}
+                // xs={12}
+                // sm={10}
+                // md={6}
+                // lg={4}
+                // xl={4}
                 m="auto"
                 // display={largerLgScreen && 'none'}
                 key={post?.attributes?.slug}
@@ -97,11 +97,11 @@ export default function Posts({
         ) : (
           posts?.map((post) => (
             <Grid.Col
-              xs={12}
-              sm={10}
-              md={6}
-              lg={4}
-              xl={4}
+              // xs={12}
+              // sm={10}
+              // md={6}
+              // lg={4}
+              // xl={4}
               m="auto"
               mt="md"
               // display={largerLgScreen && 'none'}
@@ -122,10 +122,11 @@ export default function Posts({
 
         {posts?.length ? (
           <Grid.Col display={paginationDisplay}>
-            <PostPagination totalPages={totalPages} currentPage={currentPage} />
+            {/* <PostPagination totalPages={totalPages} currentPage={currentPage} /> */}
           </Grid.Col>
         ) : null}
       </Layout>
     </>
   );
 }
+export {Posts}

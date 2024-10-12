@@ -86,6 +86,22 @@ export const BLOG_POSTS = gql`
                 }
               }
             }  
+            ... on ComponentPageSectionTwoColWithImage{
+                id
+                heading_title
+                heading_description
+                title
+                description
+                reverse              
+                image{
+                  data{
+                    attributes{
+                      caption
+                      url
+                    }
+                  }
+                }
+              }
              ... on ComponentPageSectionButton{
                 Button{
                   id
@@ -219,7 +235,7 @@ export async function getCategories() {
 }
 
 export async function getSinglePost(slug) {
-  const title = slug.replace(/_/g, ' ');
+  const title = slug.replace(/-/g, ' ');
 
   const res = await requestPosts({ title });
   if (res?.blogPosts?.meta?.pagination?.total != 1) {
@@ -243,7 +259,7 @@ export async function getPostSlugs() {
   `;
   const response = await strapiClient.request(SLUG_LIST);
   const slugs = response?.blogPosts?.data?.map((post) => ({
-    params: { slug: post.attributes.title.replace(/ /g, '_') },
+    params: { slug: post.attributes.title.replace(/ /g, '-') },
   }));
   return slugs;
 }

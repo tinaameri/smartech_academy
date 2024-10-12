@@ -21,7 +21,7 @@ import { getSlugPost } from '@/utils/helpers';
 import Image from 'next/image';
 import { useHover } from '@mantine/hooks';
 
-export default function BlogCard(props) {
+function BlogCard(props) {
   const {
     title,
     categories,
@@ -52,6 +52,7 @@ export default function BlogCard(props) {
  const  {hovered,ref}=useHover()
   return (
     // <Zoom>
+    <>
     <Card
       bg="white"
       radius="xs"
@@ -69,7 +70,7 @@ export default function BlogCard(props) {
             src={`${IMAGES_BASE_URL}${img}`}
             fill
 
-            alt="Norway"
+            alt={title}
           />
           <Center bg="#35A6B4BF" opacity={hovered ? 0.8 : 0} h="248px" 
           style={{transition: 'opacity 0.3s ease',
@@ -79,7 +80,7 @@ export default function BlogCard(props) {
             src={"/assets/images/icon/graduationCap.svg"}
             height={49}
             width={70}
-            alt="graduationCap"
+            alt=  {title}
           />
 
           </Center>
@@ -110,6 +111,8 @@ export default function BlogCard(props) {
 
       </Link>
     </Card>
+    </>
     // </Zoom>
   );
 }
+export {BlogCard}

@@ -18,7 +18,7 @@ import Social from '@/components/Social';
           direction={smallerLgScreen && 'column'}
           align="center"
           justify={smallerLgScreen ? 'center' : 'space-between'}
-          order={smallerLgScreen && 1}
+          order={{base:smallerLgScreen && 1}}
           pt={smallerLgScreen ? 'xl' : '20px'}
         >
           <Text

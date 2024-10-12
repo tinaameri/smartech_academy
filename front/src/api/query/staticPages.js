@@ -1,4 +1,4 @@
-import { BLOG_POSTS_SECTION,BLOG_CATEGORIES } from './blogPosts';
+import { BLOG_POSTS_SECTION, BLOG_CATEGORIES } from './blogPosts';
 import { CONFIG_QUERY, SEO_QUERY } from './shared';
 import { strapiClient, gql } from '@/api/client';
 export async function getPagesSlugs() {
@@ -188,39 +188,70 @@ export async function getSinglePage(slug) {
                   }
                 }
               }
-
-
-              ... on ComponentPageSectionInfo{
-                id
-                title
-                desc: description
-                infoBackground: background
-              }
-
-
-              ... on ComponentPageSectionImageCarousel{
-                id
-                heading_title
-                carouselBackground: background
-                images{
-                  data{
-                    attributes{
-                      caption
-                      url
-                      width
-                      height
-                    }
+              ... on ComponentPageSectionVerticalCards {
+            heading_title
+            heading_description
+            mobileBackground {
+                data {
+                  attributes {
+                    url
+                    alternativeText
                   }
                 }
-              }  
-               ... on ComponentPageSectionSellerCarousel{
-                id
-                heading_title
-                seller{
-                  id
-                  title
+              }
+              desktopBackground {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
                 }
               }
+            VerticalCardItem {
+              title
+              description
+              image {
+                data {
+                  attributes {
+                    url
+                    alternativeText
+                  }
+                }
+              }
+            }
+          }
+
+            #   ... on ComponentPageSectionInfo{
+            #     id
+            #     title
+            #     desc: description
+            #     infoBackground: background
+            #   }
+
+
+            #   ... on ComponentPageSectionImageCarousel{
+            #     id
+            #     heading_title
+            #     carouselBackground: background
+            #     images{
+            #       data{
+            #         attributes{
+            #           caption
+            #           url
+            #           width
+            #           height
+            #         }
+            #       }
+            #     }
+            #   }  
+            #    ... on ComponentPageSectionSellerCarousel{
+            #     id
+            #     heading_title
+            #     seller{
+            #       id
+            #       title
+            #     }
+            #   }
 
               ... on ComponentPageSectionBlogSection{
                 id
@@ -241,196 +272,164 @@ export async function getSinglePage(slug) {
                   }
                 }
               }
-              ...on ComponentPageSectionVerticalCardList{
-                id
-                heading_title
-                heading_description
+         
+
+            # ...on ComponentPageSectionTabs{
+            #   id
+            #   items{
+            #     id
+            #     icon
+            #     caption
+            #     title
+            #     body
+            #     description
+            #     image{
+            #       data{
+            #         attributes{
+            #           url
+            #           caption
+            #         }
+            #       }
+            #     }
+            #     galleryTitle
+            #     gallery{
+            #       data{
+            #         attributes{
+            #           url
+            #           caption
+            #           width
+            #           height
+            #         }
+            #       }
+            #     }
+            #   }
+            # }
+            # ... on ComponentPageSectionStepsTabs{
+            #   id
+            #   heading_title
+            #   heading_description
+            #   backgroundStepsTabs:background
+            #   step{
+            #     id
+            #     step_number
+            #     title
+            #     description
+            #     menuLink
                 
-                verticalCardBackground: background
-                three_column
-                cards{
-                  id
-                  title
-                  description
-                  step_number
-                  
-button{
-  title
-  link
-  newPage
-  type
-}
-lottie_image_animation
+            #   }
+            # } 
 
-                  image{
-                    data{
-                      attributes{
-                        url
-                        caption
-                        width
-                        height
-                      }
-                    }
-                  }
-                }
-              }
+            # ... on ComponentPageSectionSimpleText{
+            #   id
+            #   body
+            # }
 
-
-            ...on ComponentPageSectionTabs{
-              id
-              items{
-                id
-                icon
-                caption
-                title
-                body
-                description
-                image{
-                  data{
-                    attributes{
-                      url
-                      caption
-                    }
-                  }
-                }
-                galleryTitle
-                gallery{
-                  data{
-                    attributes{
-                      url
-                      caption
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-            ... on ComponentPageSectionStepsTabs{
-              id
-              heading_title
-              heading_description
-              backgroundStepsTabs:background
-              step{
-                id
-                step_number
-                title
-                description
-                menuLink
-                
-              }
-            } 
-
-            ... on ComponentPageSectionSimpleText{
-              id
-              body
-            }
-
-            ... on ComponentPageSectionBanner{
-              id
-              title
-              description
+            # ... on ComponentPageSectionBanner{
+            #   id
+            #   title
+            #   description
         
-            }
-            ... on ComponentPageSectionVideo {
-              video {
-                data {
-                  attributes {
-                    url
-                  }
-                }
-              }
-            }
-            ... on ComponentPageSectionTestimonial {
-              id
-              heading_title
-              heading_description
-              testimonialBackground:background
-              slide{
-                id
-                content
-                full_name
-                position
-                image{
-                  data{
-                    attributes{
-                      url
-                    }
-                  }
-                }
-              }
-            }
-            ... on ComponentPageSectionCardBanner {
-              id
-              heading_title
-              heading_description
-              title
-              description
-              image{
-                data{
-                  attributes{
-                    url
-                    caption
-                    height
-                  }
-                }
-              }             
-            }  
-            ... on ComponentPageSectionCreateCampaign {
-              id
-              ht: heading_title
-              image_mobile{
-                data{
-                  id
-                  attributes{
-                    caption
-                    url
-                    height
-                  }
-                }
-              }
-              image_desktop{
-                data{
-                  id
-                  attributes{
-                    caption
-                    url
-                    height
-                  }
-                }
-              }
-            }
-            ... on ComponentPageSectionContactUs {
-              id
-              description
-              contactUsBackground:background
-              button {
-                id
-                title
-                link
-                newPage
-                type
-              }
-              image {
-                data {
-                  id
-                  attributes {
-                    caption
-                    url
-                  }
-                }
-              }
-            } 
-            ... on ComponentPageSectionCounter{
-              heading_title
-              heading_description
-              Counter{
-                id
-                title
-                unit
-                count
-              }
-            }
+            # }
+
+            # ... on ComponentPageSectionVideo {
+            #   video {
+            #     data {
+            #       attributes {
+            #         url
+            #       }
+            #     }
+            #   }
+            # }
+            # ... on ComponentPageSectionTestimonial {
+            #   id
+            #   heading_title
+            #   heading_description
+            #   testimonialBackground:background
+            #   slide{
+            #     id
+            #     content
+            #     full_name
+            #     position
+            #     image{
+            #       data{
+            #         attributes{
+            #           url
+            #         }
+            #       }
+            #     }
+            #   }
+            # }
+            # ... on ComponentPageSectionCardBanner {
+            #   id
+            #   heading_title
+            #   heading_description
+            #   title
+            #   description
+            #   image{
+            #     data{
+            #       attributes{
+            #         url
+            #         caption
+            #         height
+            #       }
+            #     }
+            #   }             
+            # }  
+            # ... on ComponentPageSectionCreateCampaign {
+            #   id
+            #   ht: heading_title
+            #   image_mobile{
+            #     data{
+            #       id
+            #       attributes{
+            #         caption
+            #         url
+            #         height
+            #       }
+            #     }
+            #   }
+            #   image_desktop{
+            #     data{
+            #       id
+            #       attributes{
+            #         caption
+            #         url
+            #         height
+            #       }
+            #     }
+            #   }
+            # }
+            # ... on ComponentPageSectionContactUs {
+            #   id
+            #   description
+            #   contactUsBackground:background
+            #   button {
+            #     id
+            #     title
+            #     link
+            #     newPage
+            #     type
+            #   }
+            #   image {
+            #     data {
+            #       id
+            #       attributes {
+            #         caption
+            #         url
+            #       }
+            #     }
+            #   }
+            # } 
+            # ... on ComponentPageSectionCounter{
+            #   heading_title
+            #   heading_description
+            #   Counter{
+            #     id
+            #     title
+            #     unit
+            #     count
+            #   }
+            # }
             ... on ComponentPageSectionTimelineSection {
               id
               headingTimeline:heading_title

@@ -11,13 +11,13 @@ function Search({ }) {
         <>
             <Box className={classes.search}>
                 <Button variant='primary' h="42px" w="42px" p="0" ref={ref} onClick={toggle} >
-                    <Image src={hovered ? '/assets/images/icon/search-primary.svg' : '/assets/images/icon/search.svg'} width={24} height={24}
+                    <Image alt="search" src={hovered ? '/assets/images/icon/search-primary.svg' : '/assets/images/icon/search.svg'} priority width={24} height={24}
                     />
                 </Button>
                 <Collapse className={classes.collapse} in={opened} transitionDuration={1000} transitionTimingFunction="linear">
                     <Container size='1050'>
                         <Group>
-                            <Image src={'/assets/images/icon/search-primary.svg'} width={24} height={24}
+                            <Image alt="search" src={'/assets/images/icon/search-primary.svg'} width={24} height={24}
                             />
                             <Input variant="unstyled" placeholder="مطلب مورد نظر شما ..." />
 

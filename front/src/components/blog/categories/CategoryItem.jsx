@@ -12,7 +12,7 @@ function CategoryItem({href,title,categorySlug,icon}) {
     <UnstyledButton ref={ref}  component={Link} href={href}
     passHref>
     <Flex direction={"column"} align={"center"} justify={"center"}>
-     {icon ? <Image src={ IMAGES_BASE_URL + icon} style={{
+     {icon ? <Image  src={ IMAGES_BASE_URL + icon} style={{
         filter:hovered ?  'none' : 'grayscale(100%)'
       }} height={30} width={30} alt={title} /> : null} 
       <Text component='strong' ta="center" mt="md" fz={'xs'} c={hovered ? 'gray.7' :'third.0'} >

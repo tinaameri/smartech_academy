@@ -370,18 +370,15 @@ export interface PageElementTrustLogo extends Schema.Component {
   };
 }
 
-export interface PageElementVerticalCard extends Schema.Component {
-  collectionName: 'components_page_element_vertical_cards';
+export interface PageElementVerticalCardItem extends Schema.Component {
+  collectionName: 'components_page_element_vertical_card_items';
   info: {
-    displayName: 'VerticalCard';
+    displayName: 'VerticalCardItem';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.RichText;
-    step_number: Attribute.String;
     image: Attribute.Media;
-    button: Attribute.Component<'page-element.button', true>;
-    lottie_image_animation: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -475,7 +472,7 @@ export interface PageSectionBlogSection extends Schema.Component {
   attributes: {
     heading_title: Attribute.String;
     button: Attribute.Component<'page-element.button'>;
-    background: Attribute.Enumeration<['white', 'primary']>;
+    background: Attribute.Media;
   };
 }
 
@@ -709,18 +706,50 @@ export interface PageSectionTopBanner extends Schema.Component {
   };
 }
 
-export interface PageSectionVerticalCardList extends Schema.Component {
-  collectionName: 'components_page_section_vertical_card_lists';
+export interface PageSectionTwoColWithImage extends Schema.Component {
+  collectionName: 'components_page_section_two_col_with_images';
   info: {
-    displayName: 'VerticalCardList';
-    description: '';
+    displayName: 'TwoColWithImage';
   };
   attributes: {
     heading_title: Attribute.String;
-    heading_description: Attribute.RichText;
-    three_column: Attribute.Boolean;
-    background: Attribute.Enumeration<['blur', 'dark', 'blurWhiteBg']>;
-    cards: Attribute.Component<'page-element.vertical-card', true>;
+    heading_description: Attribute.Text;
+    title: Attribute.String;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    image: Attribute.Media;
+    reverse: Attribute.Boolean;
+  };
+}
+
+export interface PageSectionVerticalCards extends Schema.Component {
+  collectionName: 'components_page_section_vertical_cards';
+  info: {
+    displayName: 'VerticalCards';
+    description: '';
+  };
+  attributes: {
+    heading_title: Attribute.Text;
+    heading_description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    VerticalCardItem: Attribute.Component<
+      'page-element.vertical-card-item',
+      true
+    >;
+    desktopBackground: Attribute.Media;
+    mobileBackground: Attribute.Media;
   };
 }
 
@@ -811,7 +840,7 @@ declare module '@strapi/types' {
       'page-element.timeline-item': PageElementTimelineItem;
       'page-element.top-header-blog': PageElementTopHeaderBlog;
       'page-element.trust-logo': PageElementTrustLogo;
-      'page-element.vertical-card': PageElementVerticalCard;
+      'page-element.vertical-card-item': PageElementVerticalCardItem;
       'page-element.words-animation': PageElementWordsAnimation;
       'page-section.2col-with-image': PageSection2ColWithImage;
       'page-section.accordion': PageSectionAccordion;
@@ -834,7 +863,8 @@ declare module '@strapi/types' {
       'page-section.testimonial': PageSectionTestimonial;
       'page-section.timeline-section': PageSectionTimelineSection;
       'page-section.top-banner': PageSectionTopBanner;
-      'page-section.vertical-card-list': PageSectionVerticalCardList;
+      'page-section.two-col-with-image': PageSectionTwoColWithImage;
+      'page-section.vertical-cards': PageSectionVerticalCards;
       'page-section.video': PageSectionVideo;
       'shared.gdpr': SharedGdpr;
       'shared.seo': SharedSeo;
