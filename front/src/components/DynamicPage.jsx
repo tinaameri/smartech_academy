@@ -20,7 +20,7 @@ import { CardCarousel } from './carousel/CardCarousel';
 import { BlogSection } from '@/components/blog/BlogSection';
 import { TwoColWithImage } from './card/TwoColWithImage';
 import { VerticalCards } from './card/VerticalCards';
-export default function DynamicPage({ pageData, config, seo, posts, categories }) {
+export default function DynamicPage({ pageData, config, seo, posts, categories,webinars }) {
   const data =
     pageData?.page_dynamic_sections || pageData?.page_dynamic_sections_blog;
   const heroImage = data
@@ -29,7 +29,7 @@ export default function DynamicPage({ pageData, config, seo, posts, categories }
   const router = useRouter();
   return (
     <>
-      {console.log('posts', posts)}
+      {console.log('webinars----', webinars)}
       {/* {!router?.pathname.includes('/blog') && (
         <Head>
           <link
@@ -75,7 +75,20 @@ export default function DynamicPage({ pageData, config, seo, posts, categories }
 
                   />
                 </>
-              ) : (section.__typename === 'ComponentPageSectionBlogSection') ? (
+              ) : (section.__typename === 'ComponentPageSectionWebinarsSection') ? (
+                <>
+                  <BlogSection
+                    heading_title={section?.heading_title}
+                    button={section?.button}
+                    bgFluid={`url(${IMAGES_BASE_URL}${section?.background?.data?.attributes?.url})`}
+                    posts={webinars}
+                    categories={categories}
+                    withButton={true}
+                  // currentCategory={currentCategory}
+
+                  />
+                </>
+              ) :(section.__typename === 'ComponentPageSectionBlogSection') ? (
                 <>
                   <BlogSection
                     heading_title={section?.heading_title}

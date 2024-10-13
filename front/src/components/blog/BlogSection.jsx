@@ -5,6 +5,7 @@ import { CardCarousel } from '@/components/carousel/CardCarousel';
 import { CustomButton } from '@/components/customButton/CustomButton';
 import { CtegoriesCarousel } from '@/components/carousel/CategoriesCarousel';
 import { useState } from 'react';
+import { BlogCard } from '@/components/blog/BlogCard';
 //import { IMAGES_BASE_URL} from '@/api/client';
 // import { HeadMetaTags } from './HeadMetaTags';
 function BlogSection({
@@ -33,7 +34,7 @@ function BlogSection({
         selectedCategory={selectedCategory}
 
       />
-      <CardCarousel posts={filteredPosts} selectedCategory={selectedCategory} />
+      <CardCarousel posts={filteredPosts} selectedCategory={selectedCategory} CardComponent={BlogCard} cardType="BlogCard" />
       {withButton && <Grid.Col ta="center" mt="xl" className="flex-center">
         <CustomButton
           variant={button?.type}

@@ -19,16 +19,17 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ pageData, posts, config,categories }) {
+export default function Home({ pageData, posts, config,categories,webinars }) {
   return (
     <>
-    {console.log('home ----post',posts)}
       <DynamicPage
         pageData={pageData}
         seo={pageData?.seo}
         posts={posts}
         categories={categories}
         config={config}
+        webinars={webinars}
+
       />
     </>
   );

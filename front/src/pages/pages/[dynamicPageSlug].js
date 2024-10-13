@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   return data;
 }
 
-export default function Page({ pageData, posts, config,categories }) {
+export default function Page({ pageData, posts, config,categories,webinars }) {
   return (
     <>
       <DynamicPage
@@ -47,6 +47,7 @@ export default function Page({ pageData, posts, config,categories }) {
         posts={posts}
         config={config}
         categories={categories}
+        webinars={webinars}
       />
     </>
   );

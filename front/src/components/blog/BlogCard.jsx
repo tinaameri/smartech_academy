@@ -67,7 +67,7 @@ function BlogCard(props) {
 
         <Card.Section h="248px" pos={'relative'}>
           <Image
-            src={`${IMAGES_BASE_URL}${img}`}
+            src={img ? IMAGES_BASE_URL + img : '/assets/images/Placeholder.png'}
             fill
 
             alt={title}

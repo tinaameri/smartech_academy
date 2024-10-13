@@ -1,6 +1,7 @@
 import { BLOG_POSTS_SECTION, BLOG_CATEGORIES } from './blogPosts';
 import { CONFIG_QUERY, SEO_QUERY } from './shared';
 import { strapiClient, gql } from '@/api/client';
+import { WEBINARS_SECTION } from './webinar';
 export async function getPagesSlugs() {
   const PAGE_SLUG = gql`
     {
@@ -100,6 +101,7 @@ export async function getSinglePage(slug) {
       ${CONFIG_QUERY}
       ${BLOG_CATEGORIES}
       ${BLOG_POSTS_SECTION}
+      ${WEBINARS_SECTION}
       staticPages(filters:{slug:{
         eq:"${slug}"
       }}){
@@ -254,6 +256,25 @@ export async function getSinglePage(slug) {
             #   }
 
               ... on ComponentPageSectionBlogSection{
+                id
+                heading_title
+                button{
+                  id
+                  title
+                  link
+                  newPage
+                  type
+                }
+                background{
+                  data{
+                    attributes{
+                      url
+                      caption
+                    }
+                  }
+                }
+              } 
+              ... on ComponentPageSectionWebinarsSection{
                 id
                 heading_title
                 button{
@@ -472,6 +493,7 @@ export async function getSinglePage(slug) {
       : null,
     config: response?.config?.data?.attributes || {},
     posts: response?.blogPosts.data || {},
+    webinars: response?.webinars.data || {},
     categories: response?.blogCategories?.data || [],
     seo: response?.staticPages?.data?.length
       ? response?.staticPages?.data[0]?.attributes?.seo
