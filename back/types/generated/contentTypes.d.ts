@@ -773,6 +773,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
         'page-section.two-col-with-image'
       ]
     >;
+    Author: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -917,7 +918,8 @@ export interface ApiStaticPageStaticPage extends Schema.CollectionType {
         'page-section.top-banner',
         'page-section.counter',
         'page-section.blog-section',
-        'page-section.vertical-cards'
+        'page-section.vertical-cards',
+        'page-section.webinars-section'
       ]
     >;
     slug: Attribute.UID<'api::static-page.static-page', 'title'> &
@@ -963,6 +965,37 @@ export interface ApiTestTest extends Schema.SingleType {
   };
 }
 
+export interface ApiWebinarWebinar extends Schema.CollectionType {
+  collectionName: 'webinars';
+  info: {
+    singularName: 'webinar';
+    pluralName: 'webinars';
+    displayName: 'Webinar';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    WebinarCard: Attribute.Component<'page-element.webinar-card'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::webinar.webinar',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -986,6 +1019,7 @@ declare module '@strapi/types' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::static-page.static-page': ApiStaticPageStaticPage;
       'api::test.test': ApiTestTest;
+      'api::webinar.webinar': ApiWebinarWebinar;
     }
   }
 }

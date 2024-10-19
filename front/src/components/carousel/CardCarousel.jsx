@@ -36,6 +36,7 @@ function CardCarousel({ posts, CardComponent,cardType }) {
                     title: item?.attributes?.title,
                     slug: item?.attributes?.slug,
                     date: item?.attributes?.date,
+                    //author:item?.attributes?.author,
                     img: item?.attributes?.featuredImage?.data?.attributes?.url,
                     categories: item?.attributes?.categories?.data[0]?.attributes?.title,
                 };

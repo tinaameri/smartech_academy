@@ -1,13 +1,11 @@
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
-import { em, Grid } from '@mantine/core';
-import { content } from '/public/assets/contentJson';
+import { em } from '@mantine/core';
+//import { content } from '/public/assets/contentJson';
 import { Progress } from '@mantine/core';
 
 import { useCallback, useEffect, useState } from 'react';
 import { CategoryItem } from '../blog/categories/CategoryItem';
-import { IMAGES_BASE_URL } from '@/api/client';
-import classes from '@/components/carousel/CategoriesCarousel'
 import { useMediaQuery } from '@mantine/hooks';
 function CtegoriesCarousel({ categories, currentCategory,onCategorySelect,selectedCategory }) {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -26,7 +24,7 @@ function CtegoriesCarousel({ categories, currentCategory,onCategorySelect,select
       handleScroll();
     }
   }, [embla, handleScroll]);
-  const allPosts = content.blog.categories;
+  //const allPosts = content.blog.categories;
   const isMobile = useMediaQuery(`(max-width: ${em(1200)})`);
 
   return (

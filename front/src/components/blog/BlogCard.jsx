@@ -28,6 +28,7 @@ function BlogCard(props) {
     date,
     slug,
     img,
+    //author,
     latestTxt,
     latestImg,
     imgHeight,
@@ -89,16 +90,17 @@ function BlogCard(props) {
           <Text fz={'md'} c="third.0" fw={600} h="50px">
             {title}
           </Text>
+          {/* {author &&
           <Group justify="flex-start" gap='0' mt="lg" >
             <Text c='gray.5' fw={350} component='span' fz={'sm'}>
               نویسنده:
 
             </Text>
             <Text c='gray.6' fw={350} component='span' fz={'sm'}>
-              شایان شجاعی
+              {author}
 
             </Text>
-          </Group>
+          </Group> } */}
           <Group justify='space-between' mt="lg">
 
             <Button variant="textDisplay"  w="151px" leftSection={<Image src='/assets/images/icon/calendar.svg' height={20} width={20} alt='calendar' />}>{postDate}</Button>

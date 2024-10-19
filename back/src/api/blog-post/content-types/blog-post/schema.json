@@ -43,8 +43,10 @@
         "page-section.video",
         "page-section.button",
         "page-section.two-col-with-image"
-
       ]
+    },
+    "Author": {
+      "type": "string"
     }
   }
 }

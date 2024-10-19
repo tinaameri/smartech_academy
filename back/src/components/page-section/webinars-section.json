@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_section_webinars_sections",
+  "info": {
+    "displayName": "WebinarsSection"
+  },
+  "options": {},
+  "attributes": {
+    "heading_title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page-element.button"
+    },
+    "background": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

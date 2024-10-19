@@ -382,6 +382,37 @@ export interface PageElementVerticalCardItem extends Schema.Component {
   };
 }
 
+export interface PageElementWebinarCard extends Schema.Component {
+  collectionName: 'components_page_element_webinar_cards';
+  info: {
+    displayName: 'WebinarCard';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Text;
+    level: Attribute.Enumeration<
+      [
+        '\u0645\u0628\u062A\u062F\u06CC',
+        '\u0645\u062A\u0648\u0633\u0637',
+        '\u067E\u06CC\u0634\u0631\u0641\u062A\u0647'
+      ]
+    >;
+    date: Attribute.Date;
+    from: Attribute.Time;
+    description: Attribute.Text;
+    teacher: Attribute.String;
+    position: Attribute.String;
+    supporter: Attribute.String;
+    button: Attribute.Component<'page-element.button', true> &
+      Attribute.SetMinMax<{
+        max: 2;
+      }>;
+    price: Attribute.String;
+    teacherImage: Attribute.Media;
+    to: Attribute.Time;
+  };
+}
+
 export interface PageElementWordsAnimation extends Schema.Component {
   collectionName: 'components_page_element_words_animations';
   info: {
@@ -765,6 +796,18 @@ export interface PageSectionVideo extends Schema.Component {
   };
 }
 
+export interface PageSectionWebinarsSection extends Schema.Component {
+  collectionName: 'components_page_section_webinars_sections';
+  info: {
+    displayName: 'WebinarsSection';
+  };
+  attributes: {
+    heading_title: Attribute.String;
+    button: Attribute.Component<'page-element.button'>;
+    background: Attribute.Media;
+  };
+}
+
 export interface SharedGdpr extends Schema.Component {
   collectionName: 'components_shared_gdprs';
   info: {
@@ -841,6 +884,7 @@ declare module '@strapi/types' {
       'page-element.top-header-blog': PageElementTopHeaderBlog;
       'page-element.trust-logo': PageElementTrustLogo;
       'page-element.vertical-card-item': PageElementVerticalCardItem;
+      'page-element.webinar-card': PageElementWebinarCard;
       'page-element.words-animation': PageElementWordsAnimation;
       'page-section.2col-with-image': PageSection2ColWithImage;
       'page-section.accordion': PageSectionAccordion;
@@ -866,6 +910,7 @@ declare module '@strapi/types' {
       'page-section.two-col-with-image': PageSectionTwoColWithImage;
       'page-section.vertical-cards': PageSectionVerticalCards;
       'page-section.video': PageSectionVideo;
+      'page-section.webinars-section': PageSectionWebinarsSection;
       'shared.gdpr': SharedGdpr;
       'shared.seo': SharedSeo;
     }

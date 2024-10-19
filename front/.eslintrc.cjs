@@ -12,7 +12,7 @@ module.exports = {
     },
   ],
   parserOptions: {
-    project: './tsconfig.json',
+    project: './jsconfig.json',
     ecmaFeatures: {
       jsx: true
     },

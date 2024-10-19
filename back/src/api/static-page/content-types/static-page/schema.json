@@ -36,7 +36,8 @@
         "page-section.top-banner",
         "page-section.counter",
         "page-section.blog-section",
-        "page-section.vertical-cards"
+        "page-section.vertical-cards",
+        "page-section.webinars-section"      
       ]
     },
     "slug": {
