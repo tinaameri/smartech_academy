@@ -1,0 +1,35 @@
+
+.root{
+    width: 84%;
+}
+.controls{
+    width: 100px;
+    position: absolute;
+    bottom: -10px;
+    right: unset;
+    left:-80px
+ 
+}
+.carouselTransform{
+    transform: translateX(-40px);
+}
+@media (max-width: 1200px) {
+    .root{
+        width: 100%;
+    }
+    .controls{
+        width: 100px;
+        position: unset;
+        bottom: unset;
+        right: unset;
+        left:unset
+     
+    }
+    .carouselTransform{
+        transform: translateX(0px);
+    }
+  }
+  
+.control{
+    color:#A9B5CB
+}

@@ -6,7 +6,7 @@ import { BlogCard } from '../blog/BlogCard';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
 import { Progress } from '@mantine/core';
-
+import { WebinarCard } from '../webinar/WebinarCrad';
 import { useCallback, useEffect, useState } from 'react';
 import { useMediaQuery } from '@mantine/hooks';
 import { IMAGES_BASE_URL } from '@/api/client';
@@ -36,17 +36,26 @@ function CardCarousel({ posts, CardComponent,cardType }) {
                     title: item?.attributes?.title,
                     slug: item?.attributes?.slug,
                     date: item?.attributes?.date,
-                    //author:item?.attributes?.author,
+                    author:item?.attributes?.author,
                     img: item?.attributes?.featuredImage?.data?.attributes?.url,
                     categories: item?.attributes?.categories?.data[0]?.attributes?.title,
                 };
             case 'WebinarCard':
                 return {
-                    title: item?.attributes?.webinarTitle,
-                    slug: item?.attributes?.webinarSlug,
-                    date: item?.attributes?.webinarDate,
-                    videoUrl: item?.attributes?.webinarVideoUrl,
-                    speaker: item?.attributes?.webinarSpeaker,
+                    title: item?.attributes?.WebinarCard?.title,
+                    slug: item?.attributes?.WebinarCard?.slug,
+                    date: item?.attributes?.WebinarCard?.date,
+                    from: item?.attributes?.WebinarCard?.from,
+                    to: item?.attributes?.WebinarCard?.to,
+                    price: item?.attributes?.WebinarCard?.price,                  
+                    teacher: item?.attributes?.WebinarCard?.teacher,
+                    teacherColorText: item?.attributes?.WebinarCard?.teacherColorText,
+                    level: item?.attributes?.WebinarCard?.level,
+                    position: item?.attributes?.WebinarCard?.position,
+                    teacherImage: item?.attributes?.WebinarCard?.teacherImage?.data?.attributes?.url,
+                    supporterImage: item?.attributes?.WebinarCard?.supporterImage?.data?.attributes?.url,
+
+                    
                 };
             default:
                 return {};
@@ -70,13 +79,12 @@ function CardCarousel({ posts, CardComponent,cardType }) {
                 onMouseEnter={autoplay.current.stop}
                 onMouseLeave={autoplay.current.reset}
             >
+              
                 {posts?.map((item) => (
                     <Carousel.Slide key={item?.attributes?.slug} px="xs">
                         <CardComponent
                             {...getCardProps(item, cardType)}
                         />
-            
-
                     </Carousel.Slide>
                 ))}
             </Carousel>

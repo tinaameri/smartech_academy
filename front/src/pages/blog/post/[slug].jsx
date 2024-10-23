@@ -184,7 +184,7 @@ export default function Post({ post, allPosts, config }) {
                     fz="sm"
                     component={Link}
                     href={item?.href}
-                    lineClamp={1}
+                    lineclamp={1}
                   >
                     {item?.title}
                   </Text>{' '}
@@ -209,7 +209,7 @@ export default function Post({ post, allPosts, config }) {
               </svg>
             </Box>
 
-            <Text c="primary.1" fz="sm" mt="xs" lineClamp={1}>
+            <Text c="primary.1" fz="sm" mt="xs" lineclamp={1}>
               {post?.title || null}
             </Text>
           </Flex>

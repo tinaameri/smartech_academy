@@ -210,7 +210,7 @@ function GeneralHeader({
                                   component="p"
                                   //color={theme.colors.dark[5]}
                                   c="gray.5"
-                                  lineClamp={2}
+                                  lineclamp={2}
                                   className="text-body3r"
                                 >
                                   {subItem?.description}

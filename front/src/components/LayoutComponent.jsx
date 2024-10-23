@@ -19,6 +19,7 @@ export default function Layout({
   h,
   fluidClassName,
   justify,
+  gutter
 }) {
   const midScreen = useMediaQuery('(max-width: 64em) and (min-width: 37.5em)');
 
@@ -38,7 +39,7 @@ py="100px"
       >
       <Grid
       //grow
-        gutter="md"
+        gutter={gutter ?? "md"}
         align={align}
         justify={justify}
         className={className}

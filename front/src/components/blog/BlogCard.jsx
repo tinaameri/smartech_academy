@@ -28,7 +28,7 @@ function BlogCard(props) {
     date,
     slug,
     img,
-    //author,
+    author,
     latestTxt,
     latestImg,
     imgHeight,
@@ -86,11 +86,11 @@ function BlogCard(props) {
 
           </Center>
         </Card.Section>
-        <Box p='md' lineClamp={2} >
+        <Box p='md' lineclamp={2} >
           <Text fz={'md'} c="third.0" fw={600} h="50px">
             {title}
           </Text>
-          {/* {author &&
+          {author &&
           <Group justify="flex-start" gap='0' mt="lg" >
             <Text c='gray.5' fw={350} component='span' fz={'sm'}>
               نویسنده:
@@ -100,11 +100,11 @@ function BlogCard(props) {
               {author}
 
             </Text>
-          </Group> } */}
+          </Group> }
           <Group justify='space-between' mt="lg">
 
             <Button variant="textDisplay"  w="151px" leftSection={<Image src='/assets/images/icon/calendar.svg' height={20} width={20} alt='calendar' />}>{postDate}</Button>
-            <Button variant='primary' h="36px" p="9px 16px" fz="xs">
+            <Button variant='primaryOutline' h="36px" p="9px 16px" fz="xs">
               مطالعه مقاله
             </Button>
           </Group>

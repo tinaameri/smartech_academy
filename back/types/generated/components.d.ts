@@ -277,9 +277,15 @@ export interface PageElementSlide extends Schema.Component {
   };
   attributes: {
     full_name: Attribute.String;
-    content: Attribute.Text & Attribute.Required;
-    position: Attribute.String;
     image: Attribute.Media & Attribute.Required;
+    content: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
   };
 }
 
@@ -390,13 +396,7 @@ export interface PageElementWebinarCard extends Schema.Component {
   };
   attributes: {
     title: Attribute.Text;
-    level: Attribute.Enumeration<
-      [
-        '\u0645\u0628\u062A\u062F\u06CC',
-        '\u0645\u062A\u0648\u0633\u0637',
-        '\u067E\u06CC\u0634\u0631\u0641\u062A\u0647'
-      ]
-    >;
+    level: Attribute.Enumeration<['beginner', 'medium', 'advanced']>;
     date: Attribute.Date;
     from: Attribute.Time;
     description: Attribute.Text;
@@ -410,6 +410,9 @@ export interface PageElementWebinarCard extends Schema.Component {
     price: Attribute.String;
     teacherImage: Attribute.Media;
     to: Attribute.Time;
+    supporterImage: Attribute.Media;
+    cardBackground: Attribute.Media;
+    teacherColorText: Attribute.String;
   };
 }
 
@@ -708,7 +711,14 @@ export interface PageSectionTestimonial extends Schema.Component {
     background: Attribute.Enumeration<
       ['blue', 'green', 'orange', 'greenPattern']
     >;
-    heading_description: Attribute.Text;
+    heading_description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
   };
 }
 

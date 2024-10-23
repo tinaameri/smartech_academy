@@ -4,8 +4,13 @@ module.exports = ({ env }) => ({
   },
   ckeditor: {
     enabled: true,
-    resolve: "./src/plugins/strapi-plugin-ckeditor-fork"
-    ,
+    resolve: "./src/plugins/strapi-plugin-ckeditor-fork",
+  },
+  graphql: {
+    config: {
+      defaultLimit: 100, 
+      maxLimit: 100, 
+  }
   },
   upload: {
     config: {

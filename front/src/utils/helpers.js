@@ -25,3 +25,4 @@ export const getSlugPost = (title) => {
     return generateSlug(title);
   }
 };
+

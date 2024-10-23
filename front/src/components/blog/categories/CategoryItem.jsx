@@ -7,7 +7,6 @@ import React from 'react'
 
 function CategoryItem({ href, title, categorySlug, icon, onCategorySelect,selectedCategory,isSelected }) {
     const { hovered, ref } = useHover()
-    { console.log(selectedCategory) }
     return (
         <UnstyledButton
             onClick={() => onCategorySelect(categorySlug)}

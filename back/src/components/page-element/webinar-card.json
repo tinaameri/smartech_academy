@@ -12,9 +12,9 @@
     "level": {
       "type": "enumeration",
       "enum": [
-        "مبتدی",
-        "متوسط",
-        "پیشرفته"
+       "beginner",
+       "medium",
+      "advanced"
       ]
     },
     "date": {
@@ -57,6 +57,31 @@
     },
     "to": {
       "type": "time"
+    },
+    "supporterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cardBackground": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "teacherColorText": {
+      "type": "string"
     }
   }
 }

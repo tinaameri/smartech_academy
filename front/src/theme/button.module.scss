@@ -3,7 +3,7 @@
     padding: 9px 32px;
     height: 48px;
     font-size: var(--mantine-font-size-md);
-    border-radius: var(--mantine-radius-xs);
+    border-radius: 8px;
     &[data-variant='primary'] {
         color: var(--mantine-color-primary-3);
         background:var(--mantine-color-primary-0);
@@ -33,15 +33,50 @@
     }  
       &[data-variant='textDisplay'] {
         height: 36px;
-        padding:9px 16px;
+        padding:9px 10px;
         font-size:var(--mantine-font-size-sm) ;
         color: var(--mantine-color-gray-8);
         background:#FFECDD;
         cursor: default;
-        &:hover{
-            color: var(--mantine-color-gray-8);
-            background:#FFECDD;
-        }
+   
+    }
+&[data-variant='gray'] {
+        height: 36px;
+        padding:9px 10px;
+        font-size:var(--mantine-font-size-sm) ;
+        color: var(--mantine-color-gray-4);
+        background: var(--mantine-color-gray-1);
+        cursor: default;
+    
+
+    }
+    &[data-variant='pink'] {
+        height: 36px;
+        padding:9px 10px;
+        font-size:var(--mantine-font-size-sm) ;
+        color: var(--mantine-color-fourth-4);
+        background: var(--mantine-color-fourth-5);
+        cursor: default;
+    
+
+    }  
+      &[data-variant='purple'] {
+        height: 36px;
+        padding:9px 10px;
+        font-size:var(--mantine-font-size-sm) ;
+        color: var(--mantine-color-fourth-0);
+        background: var(--mantine-color-fourth-1);
+        cursor: default;
+    
+
+    }  &[data-variant='green'] {
+        height: 36px;
+        padding:9px 16px;
+        font-size:var(--mantine-font-size-sm) ;
+        color: var(--mantine-color-fourth-2);
+        background: var(--mantine-color-gray-3);
+        cursor: default;
+    
 
     }
 

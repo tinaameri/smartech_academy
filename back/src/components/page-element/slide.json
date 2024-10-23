@@ -9,20 +9,21 @@
     "full_name": {
       "type": "string"
     },
-    "content": {
-      "type": "text",
-      "required": true
-    },
-    "position": {
-      "type": "string"
-    },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

@@ -361,25 +361,25 @@ export async function getSinglePage(slug) {
             #     }
             #   }
             # }
-            # ... on ComponentPageSectionTestimonial {
-            #   id
-            #   heading_title
-            #   heading_description
-            #   testimonialBackground:background
-            #   slide{
-            #     id
-            #     content
-            #     full_name
-            #     position
-            #     image{
-            #       data{
-            #         attributes{
-            #           url
-            #         }
-            #       }
-            #     }
-            #   }
-            # }
+            ... on ComponentPageSectionTestimonial {
+              id
+              heading_title
+              heading_description
+              testimonialBackground:background
+              slide{
+                id
+                content
+                full_name
+                
+                image{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+            }
             # ... on ComponentPageSectionCardBanner {
             #   id
             #   heading_title
@@ -492,8 +492,8 @@ export async function getSinglePage(slug) {
       ? response?.staticPages?.data[0]?.attributes
       : null,
     config: response?.config?.data?.attributes || {},
-    posts: response?.blogPosts.data || {},
-    webinars: response?.webinars.data || {},
+    posts: response?.blogPosts.data || null,
+    webinars: response?.webinars?.data || null,
     categories: response?.blogCategories?.data || [],
     seo: response?.staticPages?.data?.length
       ? response?.staticPages?.data[0]?.attributes?.seo

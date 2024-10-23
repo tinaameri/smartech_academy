@@ -61,8 +61,11 @@ export const theme = createTheme({
       '#132D5C',
     ], fourth: [
       '#8E56DC',
+      '#E9DDF8',
       '#2EAB91',
+      '#D8F0F3',
       '#E64C96',
+      '#FADBEA',
       '#4B3DF7',
       '#E84A4A',
       '#ffffff',

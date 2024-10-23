@@ -34,21 +34,8 @@ import {
       $search: String
       $title: String
     ) {
-      blog {
-        data {
-          id
-          attributes {
-            heading_title
-            heading_description
-            input_placeholder
-            button
-            latest_posts_title
-            ${SEO_QUERY}
-       
-          }
-        }
-      }
-      blogPosts(
+
+      webinars(
         sort:"createdAt:desc"
         filters: {
           or: [
@@ -176,7 +163,24 @@ import {
           teacher
           position
           supporter
+          teacherColorText
+          cardBackground{
+            data {
+              attributes {
+                url
+                alternativeText
+              }
+            }
+          }
           teacherImage {
+            data {
+              attributes {
+                url
+                alternativeText
+              }
+            }
+          } 
+          supporterImage {
             data {
               attributes {
                 url

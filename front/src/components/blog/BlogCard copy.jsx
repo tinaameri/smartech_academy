@@ -127,7 +127,7 @@ export default function BlogCard(props) {
                 <Box mih="133px" sx={{ overflow: 'hidden' }}>
                   {title ? (
                     <>
-                      <Title order={6} lineClamp={3} c="rgba(0, 0, 0, 0.87)">
+                      <Title order={6} lineclamp={3} c="rgba(0, 0, 0, 0.87)">
                         {title}
                       </Title>
 

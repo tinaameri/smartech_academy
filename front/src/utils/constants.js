@@ -42,3 +42,22 @@ export const INFO_COLOR = {
   primary: 'primary.1',
   gray: 'gray.0',
 };
+
+export const LEVEL ={
+beginner:{
+  name:'مبتدی',
+  variant:'pink'
+
+},
+medium:{
+  name:'متوسط',
+  variant:'purple'
+
+},
+advanced:{
+  name:'پیشرفته',
+  variant:'green'
+
+}
+
+}

@@ -169,7 +169,7 @@ export const BLOG_POSTS_SECTION = gql`
         title
         slug: title
         date: publishedAt
-        #author
+        Author
         featuredImage {
           data {
             attributes {

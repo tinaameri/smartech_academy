@@ -20,6 +20,10 @@ import { CardCarousel } from './carousel/CardCarousel';
 import { BlogSection } from '@/components/blog/BlogSection';
 import { TwoColWithImage } from './card/TwoColWithImage';
 import { VerticalCards } from './card/VerticalCards';
+import { CardsSection } from './CardsSection';
+import { BlogCard } from './blog/BlogCard';
+import { WebinarCard } from './webinar/WebinarCrad';
+import { TestimonialCarousel } from './carousel/Testimonial/TestimonialCarousel';
 export default function DynamicPage({ pageData, config, seo, posts, categories,webinars }) {
   const data =
     pageData?.page_dynamic_sections || pageData?.page_dynamic_sections_blog;
@@ -29,7 +33,6 @@ export default function DynamicPage({ pageData, config, seo, posts, categories,w
   const router = useRouter();
   return (
     <>
-      {console.log('webinars----', webinars)}
       {/* {!router?.pathname.includes('/blog') && (
         <Head>
           <link
@@ -77,13 +80,15 @@ export default function DynamicPage({ pageData, config, seo, posts, categories,w
                 </>
               ) : (section.__typename === 'ComponentPageSectionWebinarsSection') ? (
                 <>
-                  <BlogSection
+                  <CardsSection
                     heading_title={section?.heading_title}
                     button={section?.button}
                     bgFluid={`url(${IMAGES_BASE_URL}${section?.background?.data?.attributes?.url})`}
                     posts={webinars}
                     categories={categories}
                     withButton={true}
+                    CardComponent={WebinarCard}
+                    cardType="WebinarCard"
                   // currentCategory={currentCategory}
 
                   />
@@ -97,8 +102,9 @@ export default function DynamicPage({ pageData, config, seo, posts, categories,w
                     posts={posts}
                     categories={categories}
                     withButton={true}
+                    CardComponent={BlogCard}
+                    cardType="BlogCard"
                   // currentCategory={currentCategory}
-
                   />
                 </>
               ) : section.__typename === 'ComponentPageSectionTwoColWithImage' ? (
@@ -130,6 +136,12 @@ export default function DynamicPage({ pageData, config, seo, posts, categories,w
                       cards={section?.VerticalCardItem}
 
                     />
+                  </>
+                ) :     
+                section?.__typename ===
+                  'ComponentPageSectionTestimonial' ? (
+                  <>
+                   <TestimonialCarousel heading_description={section?.heading_description} heading_title={section?.heading_title} slides={section?.slide}/>
                   </>
                 ) :
                   null
